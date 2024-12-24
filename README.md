@@ -1,56 +1,73 @@
-# Starry-Haven2
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starry Moonlit Haven</title>
+    <title>Welcome to My Little Website</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            color: #ffffff;
-            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            background: linear-gradient(to bottom right, #ffe4e1, #add8e6);
+            color: #333;
+            margin: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
         }
-        .container {
-            text-align: center;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
         h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3em;
+            color: #6a5acd;
+            text-shadow: 2px 2px #fff;
         }
         p {
-            font-size: 1.2rem;
-            margin: 10px 0;
+            font-size: 1.2em;
+            margin: 15px 0;
         }
-        .special {
-            font-style: italic;
-            font-size: 1.5rem;
-            color: #f1c40f;
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #6a5acd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        footer {
+        button:hover {
+            background-color: #836fff;
+        }
+        .game-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .output {
             margin-top: 20px;
-            font-size: 0.9rem;
-            opacity: 0.7;
+            font-size: 1.5em;
+            color: #ff4500;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Starry Moonlit Haven</h1>
-        <p>Welcome to our magical little space on the web.</p>
-        <p class="special">“Starry nights and moonlit dreams intertwined.”</p>
-        <p>Here, the light of the stars meets the glow of the moon, creating a haven just for you.</p>
-        <footer>&copy; 2024 Starry Moonlit Haven</footer>
+    <h1>Welcome to My Little Website</h1>
+    <p>Feel free to explore and have fun!</p>
+
+    <div class="game-section">
+        <h2>Interactive Game: Random Number Generator</h2>
+        <p>Click the button to generate a random number between 1 and 100:</p>
+        <button id="randomNumberButton">Generate Number</button>
+        <div class="output" id="output"></div>
     </div>
+
+    <script>
+        const button = document.getElementById('randomNumberButton');
+        const output = document.getElementById('output');
+
+        button.addEventListener('click', () => {
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            output.textContent = `Your random number is: ${randomNumber}`;
+        });
+    </script>
 </body>
 </html>
-
